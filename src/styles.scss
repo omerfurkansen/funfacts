@@ -1,0 +1,476 @@
+@import url('https://fonts.googleapis.com/css2?family=Peralta&family=Press+Start+2P&display=swap');
+
+* {
+	margin: 0;
+	padding: 0;
+	font-family: 'Peralta', cursive;
+}
+
+// Colors
+$bg-color: hsl(256, 33, 10);
+$dot-color: hsl(256, 33, 70);
+
+// Dimensions
+$dot-size: 1px;
+$dot-space: 22px;
+
+body {
+	background: linear-gradient(
+				90deg,
+				$bg-color ($dot-space - $dot-size),
+				transparent 1%
+			)
+			center,
+		linear-gradient($bg-color ($dot-space - $dot-size), transparent 1%) center,
+		$dot-color;
+	background-size: $dot-space $dot-space;
+}
+
+// Extra small devices
+
+.header {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	padding: 10px 30px;
+	&-component {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		color: #cfffdc;
+		svg {
+			border: 1px solid #cfffdc;
+			border-radius: 50%;
+			padding: 5px;
+			margin-right: 10px;
+		}
+		a {
+			text-decoration: none;
+			color: #cfffdc;
+			transition: ease-in-out 0.4s transform, ease-in-out 0.4s color;
+			&:hover {
+				color: #7900ff;
+				transform: scale(1.05);
+				transition: ease-in-out 0.4s transform, ease-in-out 0.4s color;
+			}
+		}
+	}
+}
+
+.navbar {
+	user-select: none;
+	cursor: default;
+	z-index: 9999;
+	position: sticky;
+	top: 0;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	background-color: black;
+	color: #cfffdc;
+	.brandLogo {
+		cursor: pointer;
+		width: 80px;
+		height: 80px;
+	}
+	.rightPart {
+		position: absolute;
+		right: 20px;
+		top: 32px;
+		.menu {
+			position: relative;
+			display: flex;
+			align-items: flex-end;
+			flex-direction: column;
+			border-radius: 5%;
+			background-color: black;
+			.element {
+				background: none;
+				color: #cfffdc;
+				border: none;
+				display: none;
+				margin: 15px 0;
+				padding: 0 10px;
+			}
+		}
+	}
+}
+
+.feed {
+	.title {
+		user-select: none;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		background: linear-gradient(135deg, black 25%, transparent 25%) -50px 0,
+			linear-gradient(225deg, black 25%, transparent 25%) -50px 0,
+			linear-gradient(315deg, black 25%, transparent 25%),
+			linear-gradient(45deg, black 25%, transparent 25%);
+		background-size: 25px 30px;
+		background-color: #232323;
+		color: #cfffdc;
+		font-size: 32px;
+		font-family: 'Press Start 2P', cursive;
+		padding: 10px 20px 5px 20px;
+		border-top: dotted 1px rgba(#cfffdc, 40%);
+		border-bottom: dotted 1px rgba(#cfffdc, 40%);
+	}
+	.dogAndCats {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		.secondImage {
+			display: none;
+		}
+		.dogImage {
+			width: 100%;
+			height: 280px;
+			border-radius: 10px;
+		}
+		.catImage {
+			width: 100%;
+			height: 280px;
+			border-radius: 10px;
+		}
+		.textPart {
+			display: flex;
+			justify-content: center;
+			height: 280px;
+			border-radius: 10px;
+			background: rgba(0, 0, 0, 40%);
+			color: #cfffdc;
+			align-items: center;
+			button {
+				margin: 0 20px;
+				cursor: pointer;
+				border: none;
+				color: #cfffdc;
+				height: 100%;
+				border-radius: 10px;
+				background: none;
+				transition: ease-in-out 0.3s background-color;
+				svg {
+					transition: ease-in-out 0.3s transform;
+					width: 30px;
+					height: 30px;
+				}
+				&:hover {
+					background-color: rgba(0, 0, 0, 20%);
+					transition: ease-in-out 0.3s background-color;
+					svg {
+						transform: scale(1.5);
+						transition: ease-in-out 0.3s transform;
+					}
+				}
+			}
+			.textBox {
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
+				align-items: center;
+				h4 {
+					font-size: 25px;
+					color: pink;
+				}
+				p {
+					text-align: center;
+					padding: 30px;
+				}
+			}
+		}
+	}
+	.spaceFacts {
+		display: flex;
+		flex-direction: column;
+		.spaceFactImage {
+			width: 100%;
+			max-height: 540px;
+			min-height: 400px;
+		}
+		.spaceFactRightPart {
+			display: flex;
+			flex-direction: column;
+			justify-content: space-around;
+			padding: 30px;
+			color: #cfffdc;
+			background: rgba(0, 0, 0, 40%);
+			.spaceFactTitle {
+				font-size: 22px;
+				color: pink;
+			}
+			.selectionButtons {
+				display: flex;
+				align-self: flex-end;
+			}
+			button {
+				border: none;
+				color: #cfffdc;
+				background: none;
+				svg {
+					cursor: pointer;
+					transition: ease-in-out 0.3s transform;
+					width: 30px;
+					height: 30px;
+					&:hover {
+						transform: scale(1.5);
+						transition: ease-in-out 0.3s transform;
+					}
+				}
+			}
+		}
+	}
+	.numbers {
+		display: flex;
+		flex-direction: column;
+		justify-content: space-evenly;
+		align-items: center;
+		text-align: center;
+		font-size: 18px;
+		color: #cfffdc;
+		border-radius: 10px;
+		background: rgba(0, 0, 0, 40%);
+		.trivia {
+			color: #ff1700;
+		}
+		.year {
+			color: #ff8e00;
+		}
+		.date {
+			color: #ffe400;
+		}
+		.math {
+			color: #06ff00;
+		}
+		p {
+			padding: 20px;
+		}
+	}
+	.weatherAndMap {
+		display: flex;
+		flex-direction: column;
+		#weather {
+			user-select: none;
+			display: flex;
+			flex-direction: column;
+			justify-content: space-evenly;
+			align-items: center;
+			width: 100%;
+			height: 250px;
+			color: #cfffdc;
+			padding: 20px 0;
+			background: rgba(0, 0, 0, 40%);
+			.searchBox {
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				input {
+					position: absolute;
+					height: 30px;
+					width: 120px;
+					padding: 0 35px 0 15px;
+					border: none;
+					border-radius: 10px;
+				}
+				svg {
+					cursor: pointer;
+					position: relative;
+					right: -68px;
+					height: 20px;
+					width: 20px;
+					border-left: 1px solid gray;
+					padding-left: 3px;
+					color: black;
+				}
+			}
+			.coordBox {
+				background-color: white;
+				border: none;
+				border-radius: 10px;
+				padding: 3px 10px;
+				transition: ease-in-out 0.4s background-color;
+				&:hover {
+					cursor: pointer;
+					background-color: #7900ff;
+					color: white;
+					transition: ease-in-out 0.4s background-color;
+				}
+			}
+			.weatherBox {
+				display: flex;
+				align-items: center;
+				flex-direction: column;
+				width: 100%;
+				.imageAndInfo {
+					display: flex;
+					justify-content: space-between;
+					width: 180px;
+					svg {
+						cursor: pointer;
+					}
+				}
+			}
+		}
+	}
+}
+
+.footer {
+	display: flex;
+	align-items: center;
+	box-sizing: border-box;
+	width: 100%;
+	padding: 20px 10px;
+	background-color: black;
+	border-top: solid 1px rgba(white, 40%);
+	color: #cfffdc;
+	a {
+		text-decoration: none;
+		color: #cfffdc;
+		transition: ease-in-out 0.4s transform, ease-in-out 0.4s color;
+		&:hover {
+			color: #7900ff;
+			transform: scale(1.05);
+			transition: ease-in-out 0.4s transform, ease-in-out 0.4s color;
+		}
+	}
+	.logo {
+		width: 50px;
+		height: 50px;
+	}
+	.footer-info {
+		display: flex;
+		flex-direction: column;
+		margin-left: 20px;
+	}
+}
+
+@media (max-width: 320px) {
+	.header {
+		font-size: 10px;
+	}
+}
+
+// Small devices
+@media (min-width: 576px) {
+	.header {
+		flex-direction: row;
+		justify-content: space-between;
+	}
+	.navbar {
+		padding: 10px 30px;
+		.rightPart {
+			position: static;
+			.menu {
+				flex-direction: row;
+				align-items: center;
+				.menuIcon {
+					display: none;
+				}
+				.element {
+					display: flex !important;
+					margin: 0 10px;
+					padding: 0;
+				}
+				.themePicker {
+					display: flex !important;
+					border-left: 2px solid black;
+					padding-left: 10px;
+					margin: 0 10px;
+				}
+			}
+		}
+	}
+	.feed {
+		.spaceFacts {
+			.spaceFactImage {
+				align-self: center;
+				width: 500px;
+			}
+		}
+		.weatherAndMap {
+			flex-direction: row;
+			#weather {
+				border-radius: 10px;
+				background: rgba(0, 0, 0, 40%);
+				width: 400px;
+				margin: 0 50px;
+				height: auto;
+				padding: 0;
+			}
+		}
+	}
+}
+
+@media (min-width: 700px) {
+	.feed {
+		.dogAndCats {
+			flex-direction: row;
+			justify-content: space-around;
+			.dogImage {
+				width: 192px;
+				height: 192px;
+				box-shadow: rgba(240, 46, 170, 0.4) -5px 5px,
+					rgba(240, 46, 170, 0.3) -10px 10px, rgba(240, 46, 170, 0.2) -15px 15px,
+					rgba(240, 46, 170, 0.1) -20px 20px,
+					rgba(240, 46, 170, 0.05) -25px 25px;
+			}
+			.catImage {
+				width: 192px;
+				height: 192px;
+				box-shadow: rgba(240, 46, 170, 0.4) 5px 5px,
+					rgba(240, 46, 170, 0.3) 10px 10px, rgba(240, 46, 170, 0.2) 15px 15px,
+					rgba(240, 46, 170, 0.1) 20px 20px, rgba(240, 46, 170, 0.05) 25px 25px;
+			}
+			.textPart {
+				width: 300px;
+				height: 300px;
+				padding: 10px 0;
+				button {
+					margin: 0;
+				}
+			}
+		}
+	}
+}
+
+@media (min-width: 900px) {
+	.feed {
+		.dogAndCats {
+			.dogImage {
+				width: 200px;
+				height: 200px;
+			}
+			.catImage {
+				width: 200px;
+				height: 200px;
+			}
+		}
+		.spaceFacts {
+			flex-direction: row;
+		}
+	}
+}
+
+@media (min-width: 1145px) {
+	.feed {
+		.dogAndCats {
+			.secondImage {
+				display: inline;
+			}
+		}
+	}
+}
+
+@media (min-width: 1600px) {
+	.feed {
+		.dogAndCats {
+			.dogImage {
+				width: 300px;
+				height: 300px;
+			}
+			.catImage {
+				width: 300px;
+				height: 300px;
+			}
+		}
+	}
+}
